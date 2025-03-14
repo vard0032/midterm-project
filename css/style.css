@@ -1,0 +1,402 @@
+/* ===== Root Variables ===== */
+:root {
+    --background-color: black; 
+    --primary-color: hsl(204,100%,33%);
+    --accent-color: #4ce0d7;
+    --accent-color2: #4e0063;
+    --accent-color3: #be0a0a;
+    --text-color: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', Arial, sans-serif;
+    --transition-duration: 0.4s;
+    --max-width: 1000px;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+/* ===== Container ===== */
+
+.container {
+    width: 60%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* =====  Title ===== */
+
+.magazine-title {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-left: 20%;
+    
+}
+
+/*  ==== Navigation ==== */
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 1rem;
+    margin-right: -10rem;
+
+  }
+  
+  .nav-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 500px;
+    background-color: transparent;
+    transition: 
+        transform var(--transition-duration) ease,
+        background-color var(--transition-duration) ease,
+        color var(--transition-duration) ease;
+  }
+  
+  .contact-link {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 500px;
+  }
+  
+  .nav-link:hover {
+    transform: scale(1.20);
+    background-color: var(--accent-color);
+    color: #000;
+    border-radius: 500px;
+  }
+  
+  .nav-link:focus {
+    outline: 2px solid var(--accent-color3);
+    outline-offset: 2px;
+  }
+
+/* =====  h1 stripe ===== */
+
+.stripe {
+    position: relative;
+}
+
+.stripe::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 15px;
+    right: 0;
+    bottom: 10px;
+    background: var(--primary-color);
+    z-index: -1;
+}
+
+/* ===== Hero Image ===== */
+
+.wrapper {
+    min-width: 1000px;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    animation: zoom 15s infinite ease-in-out alternate;
+    display: block;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+.hero-title {
+    font-size: 14px;
+    font-family: var(--font-body);
+    font-weight: bold;
+    padding: 10px;
+}
+
+.solar-system {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+    padding: 10px;
+}
+
+.text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 5;
+    color: white;
+    font-family: var(--font-body);
+}
+
+.description {
+    padding: 10px;
+}
+
+
+/* ===== colour Shifting text for Solar System ===== */
+
+.colorShift {
+    background: linear-gradient(90deg, rgb(57, 120, 183) , rgb(0, 225, 225));
+    font-weight: bold;
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    animation: textscroll 3s infinite alternate;
+} 
+
+@keyframes textscroll {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 0%;
+    }
+}
+
+/* =====  Planets Grid ===== */
+
+.meet-the-locals {
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 200%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+ 
+.locals-title {
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+}
+
+.planets-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.planet {
+    text-align: center;
+    padding: 1rem;
+    transition: transform var(--transition-duration) ease;
+}
+
+.planet-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.planet-title {
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 15px;
+}
+
+/* ===== Learn More Buttons ===== */
+
+.learn-more {
+    display: inline-block;
+    background-color: var(--primary-color);
+    font-family: var(--font-body);
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 400px;
+    transition: transform var(--transition-duration) ease,
+    background-color var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+}
+
+.learn-more:hover {
+    transform: scale(1.20);
+    background-color: var(--accent-color);
+    color: #000;
+    border-radius: 500px;
+}
+
+.learn-more:visited {
+    background-color: var(--accent-color2);
+    color: #fff;
+    transition: transform var(--transition-duration) ease,
+                background-color var(--transition-duration) ease,
+                color var(--transition-duration) ease;
+  }
+
+  .learn-more:visited:hover {
+    background-color: var(--accent-color);
+    color: #000;
+  }
+
+  .learn-more:focus, button:focus, input:focus {
+  outline: 2px solid var(--accent-color3);
+  outline-offset: 2px;
+}
+
+/* ===== Media Queries ===== */
+
+@media (min-width: 901px) {
+    .text {
+    position: absolute;
+    text-align: left;
+    padding: 1rem; 
+    bottom: 20px;
+    left: 20px;
+  }
+    .solar-system {
+        font-size: 48px;
+    }
+    .locals-title {
+        text-align: left;
+    }
+
+    .site-footer {
+        margin: auto;
+    }
+
+    }
+    
+@media (max-width: 900px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1.5rem;
+    }
+
+    .container {
+        min-width: 900px;
+        border-radius: 0px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .hero-img {
+        width: 100%;
+        animation: zoom 8s infinite ease-in-out alternate;
+        display: block;
+    }
+    .planets-grid {
+        grid-template-columns: repeat(3, 2fr);
+        max-width: 850px;
+      }
+
+      .nav-list {
+        justify-content: center;
+        padding-bottom: 0;
+        margin: auto; 
+      }
+      
+      .text {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        text-align: left;
+        padding: 1rem;
+      }
+
+      .locals-title {
+        font-size: 2rem;
+        margin: auto;
+      }
+
+      .solar-system {
+        font-size: 40px;
+      }
+      
+      .magazine-title {
+        padding-top: 5%;
+        text-align: center;margin: auto;
+      }
+
+      .meet-the-locals {
+        margin-right: 10%;
+      }
+      .site-footer {
+        margin: auto;
+      }
+     
+      
+}
+
+@media (max-width:500px) {
+    .planets-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+    .wrapper {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .text {
+        text-align: center;
+        padding: 1rem;
+        max-width: 380px;
+        position: absolute;
+        bottom: 70px;
+    }
+    
+    .locals-title {
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem;
+        max-width: 380px;
+        bottom: 70px;
+        margin-left: 5%;
+    }
+    .hero-img {
+        width: 60%;
+    }
+
+}
+
+/*  ==== Footer ==== */
+
+.site-footer {
+    border-top: 0.5px solid #303030;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: var(--font-body);
+    margin: auto;
+}
+
